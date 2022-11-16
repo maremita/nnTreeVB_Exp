@@ -5,9 +5,9 @@
 #SBATCH --job-name=01_data_sum_plot
 #SBATCH --cpus-per-task=12
 #SBATCH --mem=64000M
-#SBATCH --time=01:00:00
-#SBATCH --error=../exps/exp_jobs/01_data/%j.err
-#SBATCH --output=../exps/exp_jobs/01_data/%j.out
+#SBATCH --time=03:00:00
+#SBATCH --error=../exps/exp_jobs/01_data_1/%j.err
+#SBATCH --output=../exps/exp_jobs/01_data_1/%j.out
 
 module load StdEnv/2020
 module load python/3.8
@@ -30,4 +30,4 @@ cp -a /home/mremita/project/mremita/Thesis/Software/nnTreeVB/. $SLURM_TMPDIR/nnT
 pip install --no-index $SLURM_TMPDIR/pyvolve/
 pip install --no-index $SLURM_TMPDIR/nnTreeVB/
 
-sum_plot_nntreevb_exps.py -c 01_data.ini -j 01_data_1
+nntreevb_sum_plot_exps.py -c 01_data.ini -j 01_data_1
