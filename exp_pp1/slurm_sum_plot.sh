@@ -5,7 +5,7 @@
 #SBATCH --job-name=01_data_sum_plot
 #SBATCH --cpus-per-task=12
 #SBATCH --mem=64000M
-#SBATCH --time=03:00:00
+#SBATCH --time=04:00:00
 #SBATCH --error=../exps/exp_jobs/01_data_1/%j.err
 #SBATCH --output=../exps/exp_jobs/01_data_1/%j.out
 
@@ -30,4 +30,17 @@ cp -a /home/mremita/project/mremita/Thesis/Software/nnTreeVB/. $SLURM_TMPDIR/nnT
 pip install --no-index $SLURM_TMPDIR/pyvolve/
 pip install --no-index $SLURM_TMPDIR/nnTreeVB/
 
-nntreevb_sum_plot_exps.py -c 01_data.ini -j 01_data_1
+# Gaussian mean-field
+#nntreevb_sum_plot_exps.py -c 01_data.ini -j 01_data_1
+
+# Flexible mean-field
+#nntreevb_sum_plot_exps.py -c 02_data.ini -j 02_data
+
+# Gaussian MF, JC69 data, JC69 var model,  NN based encoder for branches
+#nntreevb_sum_plot_exps.py -c 03_mfg_nn_jc69_l1k_t32.ini -j 03_mfg_nn_jc69_l1k_t32
+
+# Flexible MF (gamma), JC69 data, JC69 var model,  NN based encoder for branches
+#nntreevb_sum_plot_exps.py -c 04_mff_nn_jc69_l1k_t32.ini -j 04_mff_nn_jc69_l1k_t32
+
+# 
+nntreevb_sum_plot_exps.py -c 05_mfg_jc69_l1k_t32_nn_hp.ini -j 05_mfg_jc69_l1k_t32_nn_hp
