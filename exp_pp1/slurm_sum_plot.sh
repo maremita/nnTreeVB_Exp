@@ -2,12 +2,12 @@
 
 #SBATCH --account=ctb-banire
 #SBATCH --mail-user=amine.m.remita@gmail.com
-#SBATCH --job-name=01_data_sum_plot
-#SBATCH --cpus-per-task=12
+#SBATCH --job-name=06_mff_sum_plot
+#SBATCH --cpus-per-task=24
 #SBATCH --mem=64000M
-#SBATCH --time=04:00:00
-#SBATCH --error=../exps/exp_jobs/01_data_1/%j.err
-#SBATCH --output=../exps/exp_jobs/01_data_1/%j.out
+#SBATCH --time=03:00:00
+#SBATCH --error=../exps/exp_jobs/tmp/%j.err
+#SBATCH --output=../exps/exp_jobs/tmp/%j.out
 
 module load StdEnv/2020
 module load python/3.8
@@ -37,10 +37,15 @@ pip install --no-index $SLURM_TMPDIR/nnTreeVB/
 #nntreevb_sum_plot_exps.py -c 02_data.ini -j 02_data
 
 # Gaussian MF, JC69 data, JC69 var model,  NN based encoder for branches
-#nntreevb_sum_plot_exps.py -c 03_mfg_nn_jc69_l1k_t32.ini -j 03_mfg_nn_jc69_l1k_t32
+#nntreevb_sum_plot_exps.py -c 03_mfg_nn_jc69_l1k_t32.ini -j 03_mfg_nn_jc69_l1k_t32_4
 
 # Flexible MF (gamma), JC69 data, JC69 var model,  NN based encoder for branches
-#nntreevb_sum_plot_exps.py -c 04_mff_nn_jc69_l1k_t32.ini -j 04_mff_nn_jc69_l1k_t32
+#nntreevb_sum_plot_exps.py -c 04_mff_nn_jc69_l1k_t32.ini -j 04_mff_nn_jc69_l1k_t32_4
 
 # 
-nntreevb_sum_plot_exps.py -c 05_mfg_jc69_l1k_t32_nn_hp.ini -j 05_mfg_jc69_l1k_t32_nn_hp
+#nntreevb_sum_plot_exps.py -c 05_mfg_jc69_l1k_t32_nn_hp.ini -j 05_mfg_jc69_l1k_t32_nn_hp
+
+#
+#nntreevb_sum_plot_exps.py -c 06_mfg_data_jc69_l1k_t32.ini -j 06_mfg_data_jc69_l1k_t32_1
+
+nntreevb_sum_plot_exps.py -c 06_mff_data_jc69_l1k_t32.ini -j 06_mff_data_jc69_l1k_t32_1
