@@ -13,6 +13,11 @@
 #tar -zcf 03_mfg_nn_jc69_l1k_t32_4.tar.gz 03_mfg_nn_jc69_l1k_t32_4/
 #tar -zcf 04_mff_nn_jc69_l1k_t32_4.tar.gz 04_mff_nn_jc69_l1k_t32_4/
 
-tar -zcf 06_mff_data_jc69_l1k_t32_1.tar.gz 06_mff_data_jc69_l1k_t32_1/
-tar -zcf 06_mfg_data_jc69_l1k_t32_1.tar.gz 06_mfg_data_jc69_l1k_t32_1/
+#tar -zcf 06_mff_data_jc69_l1k_t32_2.tar.gz 06_mff_data_jc69_l1k_t32_2/
+#tar -zcf 06_mfg_data_jc69_l1k_t32_2.tar.gz 06_mfg_data_jc69_l1k_t32_2/
 
+#tar -zcf 06_mff_data_jc69_l1k_t32_2_sum.tar.gz 06_mff_data_jc69_l1k_t32_2/summarize_12091436/
+#tar -zcf 06_mfg_data_jc69_l1k_t32_2_sum.tar.gz 06_mfg_data_jc69_l1k_t32_2/summarize_12091528/
+
+tar -zcf 07_mfg_exp_data_jc69_l1k_t32_1.tar.gz 07_mfg_exp_data_jc69_l1k_t32_1/
+tar -zcf 07_mff_exp_data_jc69_l1k_t32_1.tar.gz 07_mff_exp_data_jc69_l1k_t32_1/

@@ -2,8 +2,8 @@
 
 #SBATCH --account=ctb-banire
 #SBATCH --mail-user=amine.m.remita@gmail.com
-#SBATCH --job-name=06_mff_sum_plot
-#SBATCH --cpus-per-task=24
+#SBATCH --job-name=07_mff_sum_plot
+#SBATCH --cpus-per-task=32
 #SBATCH --mem=64000M
 #SBATCH --time=03:00:00
 #SBATCH --error=../exps/exp_jobs/tmp/%j.err
@@ -45,7 +45,12 @@ pip install --no-index $SLURM_TMPDIR/nnTreeVB/
 # 
 #nntreevb_sum_plot_exps.py -c 05_mfg_jc69_l1k_t32_nn_hp.ini -j 05_mfg_jc69_l1k_t32_nn_hp
 
-#
-#nntreevb_sum_plot_exps.py -c 06_mfg_data_jc69_l1k_t32.ini -j 06_mfg_data_jc69_l1k_t32_1
+# Gamma distribution based branch length simulation
+#nntreevb_sum_plot_exps.py -c 06_mfg_data_jc69_l1k_t32.ini -j 06_mfg_data_jc69_l1k_t32_2
 
-nntreevb_sum_plot_exps.py -c 06_mff_data_jc69_l1k_t32.ini -j 06_mff_data_jc69_l1k_t32_1
+#nntreevb_sum_plot_exps.py -c 06_mff_data_jc69_l1k_t32.ini -j 06_mff_data_jc69_l1k_t32_2
+
+# Exponentionally simulated branch lengths
+#nntreevb_sum_plot_exps.py -c 07_mfg_exp_data_jc69_l1k_t32.ini -j 07_mfg_exp_data_jc69_l1k_t32_1
+
+nntreevb_sum_plot_exps.py -c 07_mff_exp_data_jc69_l1k_t32.ini -j 07_mff_exp_data_jc69_l1k_t32_1
