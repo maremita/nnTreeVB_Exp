@@ -2,7 +2,8 @@
 
 #SBATCH --account=ctb-banire
 #SBATCH --mail-user=amine.m.remita@gmail.com
-#SBATCH --job-name=07_mff_sum_plot
+#SBATCH --job-name=01_data_sum_plot
+##SBATCH --job-name=02_mfg_sum_plot
 #SBATCH --cpus-per-task=32
 #SBATCH --mem=64000M
 #SBATCH --time=03:00:00
@@ -30,27 +31,9 @@ cp -a /home/mremita/project/mremita/Thesis/Software/nnTreeVB/. $SLURM_TMPDIR/nnT
 pip install --no-index $SLURM_TMPDIR/pyvolve/
 pip install --no-index $SLURM_TMPDIR/nnTreeVB/
 
-# Gaussian mean-field
-#nntreevb_sum_plot_exps.py -c 01_data.ini -j 01_data_1
-
-# Flexible mean-field
-#nntreevb_sum_plot_exps.py -c 02_data.ini -j 02_data
-
-# Gaussian MF, JC69 data, JC69 var model,  NN based encoder for branches
-#nntreevb_sum_plot_exps.py -c 03_mfg_nn_jc69_l1k_t32.ini -j 03_mfg_nn_jc69_l1k_t32_4
-
-# Flexible MF (gamma), JC69 data, JC69 var model,  NN based encoder for branches
-#nntreevb_sum_plot_exps.py -c 04_mff_nn_jc69_l1k_t32.ini -j 04_mff_nn_jc69_l1k_t32_4
-
-# 
-#nntreevb_sum_plot_exps.py -c 05_mfg_jc69_l1k_t32_nn_hp.ini -j 05_mfg_jc69_l1k_t32_nn_hp
-
-# Gamma distribution based branch length simulation
-#nntreevb_sum_plot_exps.py -c 06_mfg_data_jc69_l1k_t32.ini -j 06_mfg_data_jc69_l1k_t32_2
-
-#nntreevb_sum_plot_exps.py -c 06_mff_data_jc69_l1k_t32.ini -j 06_mff_data_jc69_l1k_t32_2
+# Gaussian mean-field evaluation
+nntreevb_sum_plot_exps.py -c 01_mfg_data_models.ini -j 01_mfg_data_models_1
 
 # Exponentionally simulated branch lengths
-#nntreevb_sum_plot_exps.py -c 07_mfg_exp_data_jc69_l1k_t32.ini -j 07_mfg_exp_data_jc69_l1k_t32_1
+#nntreevb_sum_plot_exps.py -c 02_mfg_exp_data_jc69_l1k_t32.ini -j 02_mfg_exp_data_jc69_l1k_t32_1 
 
-nntreevb_sum_plot_exps.py -c 07_mff_exp_data_jc69_l1k_t32.ini -j 07_mff_exp_data_jc69_l1k_t32_1
