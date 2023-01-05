@@ -10,5 +10,5 @@
 #SBATCH --output=../exp_jobs/tmp/%j.out
 
 
-#tar -zcf 01_mfg_data_models_1.tar.gz 01_mfg_data_models_1/
-tar -zcf 02_mfg_exp_data_jc69_l1k_t32_1.tar.gz 02_mfg_exp_data_jc69_l1k_t32_1/
+tar -zcf 01_mfg_data_models_1.tar.gz 01_mfg_data_models_1/
+#tar -zcf 02_mfg_exp_data_jc69_l1k_t32_1.tar.gz 02_mfg_exp_data_jc69_l1k_t32_1/
