@@ -7,7 +7,7 @@
 ##SBATCH --job-name=03_rates_sum_plot
 #SBATCH --job-name=04_freqs_sum_plot
 #SBATCH --cpus-per-task=24
-#SBATCH --mem=75000M
+#SBATCH --mem=64000M
 #SBATCH --time=01:00:00
 #SBATCH --error=../results/exp_learn_priors/exp_jobs/tmp/%j.err
 #SBATCH --output=../results/exp_learn_priors/exp_jobs/tmp/%j.out
@@ -34,17 +34,17 @@ pip install --no-index $SLURM_TMPDIR/pyvolve/
 pip install --no-index $SLURM_TMPDIR/nnTreeVB/
 
 # MFG, data grid, exponentionally simulated branch lengths
+# 64G/1 hour
 #nntreevb_sum_plot_exps.py -c 01_mfg_exp_data_jc69.ini -j 01_mfg_exp_data_jc69_1
 
 # MFG, data grid, 2exp for extern & intern branch lenths
-#nntreevb_sum_plot_exps.py -c 02_mfg_2exp_blens_jc69.ini -j 02_mfg_2exp_blens_jc69_1
+# 32G/1 hour
+#nntreevb_sum_plot_exps.py -c 02_mfg_2exp_blens_jc69.ini -j 02_mfg_2exp_blens_jc69_2
 
-#
-#nntreevb_sum_plot_exps.py -c 03_mfg_gtr_rates_dhky_l1k_t32.ini -j 03_mfg_gtr_rates_dhky_l1k_t32_1
-#
+# MFG, data grid, different kappa values for rate estimation
+# 64G/1 hour
 #nntreevb_sum_plot_exps.py -c 03_mfg_gtr_rates_dhky.ini -j 03_mfg_gtr_rates_dhky_1
 
-#
-#nntreevb_sum_plot_exps.py -c 04_mfg_gtr_freqs_dhky_l1k_t32.ini -j 04_mfg_gtr_freqs_dhky_l1k_t32_1
-#
+# MFG, data grid, different frequencies values for estimation
+# 64G/1 hour
 nntreevb_sum_plot_exps.py -c 04_mfg_gtr_freqs_dhky.ini -j 04_mfg_gtr_freqs_dhky_1
