@@ -5,9 +5,10 @@
 ##SBATCH --job-name=01_exp_sum_plot
 ##SBATCH --job-name=02_2exp_sum_plot
 ##SBATCH --job-name=03_rates_sum_plot
-#SBATCH --job-name=04_freqs_sum_plot
+##SBATCH --job-name=04_freqs_sum_plot
+#SBATCH --job-name=05_fit_sum_plot
 #SBATCH --cpus-per-task=24
-#SBATCH --mem=64000M
+#SBATCH --mem=80000M
 #SBATCH --time=01:00:00
 #SBATCH --error=../results/exp_learn_priors/exp_jobs/tmp/%j.err
 #SBATCH --output=../results/exp_learn_priors/exp_jobs/tmp/%j.out
@@ -47,4 +48,8 @@ pip install --no-index $SLURM_TMPDIR/nnTreeVB/
 
 # MFG, data grid, different frequencies values for estimation
 # 64G/1 hour
-nntreevb_sum_plot_exps.py -c 04_mfg_gtr_freqs_dhky.ini -j 04_mfg_gtr_freqs_dhky_1
+#nntreevb_sum_plot_exps.py -c 04_mfg_gtr_freqs_dhky.ini -j 04_mfg_gtr_freqs_dhky_1
+
+# MFG, JC69 data, exponentionally simulated branch lengths, keep fit iteration results
+# 80G/1 hour
+nntreevb_sum_plot_exps.py -c 05_mfg_exp_jc69_keep_fit.ini -j 05_mfg_exp_jc69_keep_fit_1
